@@ -1,10 +1,11 @@
-// Updated logic.js with navigation feature
+// Updated logic.js with navigation feature and state management for selected answers
 const quizContainer = document.getElementById('quiz');
 const resultContainer = document.getElementById('result');
 const submitButton = document.getElementById('submit');
 
 let currentQuestionIndex = 0;
 let questions = [];
+let selectedAnswers = {}; // Store selected answers for each question
 
 async function loadQuestions() {
     try {
@@ -28,9 +29,13 @@ function displayQuestion(index) {
 
         question.options.forEach(option => {
             const label = document.createElement('label');
+            const isChecked = selectedAnswers[question.id] === option ? 'checked' : ''; // Check if the option was previously selected
             label.innerHTML = `
-                <input type="radio" name="question${question.id}" value="${option}"> ${option}
+                <input type="radio" name="question${question.id}" value="${option}" ${isChecked}> ${option}
             `;
+            label.querySelector('input').addEventListener('click', () => {
+                selectedAnswers[question.id] = option; // Store the selected answer
+            });
             questionElement.appendChild(label);
             questionElement.appendChild(document.createElement('br'));
         });
@@ -62,8 +67,8 @@ function displayQuestion(index) {
 function checkAnswers() {
     let score = 0;
     questions.forEach(question => {
-        const selectedAnswer = document.querySelector(`input[name="question${question.id}"]:checked`);
-        if (selectedAnswer && selectedAnswer.value === question.answer) {
+        const selectedAnswer = selectedAnswers[question.id]; // Use stored answers
+        if (selectedAnswer && selectedAnswer === question.answer) {
             score++;
         }
     });
