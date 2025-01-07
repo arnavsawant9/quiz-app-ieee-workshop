@@ -1,0 +1,88 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #003049;
+    color: #fff;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: #c1121f;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#quiz {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.question {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0.5, 0.2, 0.3, 0.5);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+label span {
+    margin-left: 0.5rem;
+    flex-grow: 1;
+    text-align: left;
+}
+
+input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.navigation button {
+    margin: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.navigation button:hover {
+    background: #ff6f61;
+    color: #000;
+}
+
+#submit {
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    background: #f76b1c;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+#submit:hover {
+    background: #ff8c42;
+}
+
+#result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
